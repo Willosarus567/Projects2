@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShoppingList</title>
+    <link rel="stylesheet" href="css/GroceryList.css" />
+  </head>
+	 <body id="body">
+	 <div id="page">
+       <div id="stats">
+        screenX: <input type="text" id="sx" /> 
+        screenY: <input type="text" id="sy" /><span class="divider">|</span> 
+        pageX: <input type="text" id="px" /> 
+        pageY: <input type="text" id="py" /><span class="divider">|</span>
+        clientX: <input type="text" id="cx" /> 
+        clientY: <input type="text" id="cy" />
+       </div>
+      <h1>List King</h1>
+      <h2>Purchase Transportation Services <span id="counter">1</span></h2>
+      <ul id="list">
+        <p class="hot"><em>Transportation Overhead</em></p>
+      </ul>
+      <div id="newItemButton"><button href="#" id="showForm">new item</button></div>
+      <form id="newItemForm">
+        <input type="text" placeholder="Add description" />
+        <input type="submit" id="add" value="add" />
+      </form>
+	  <div id="TotalBox">
+	    <p>Total: $5000</p>
+	  </div>
+	  <div id="submitOrder">
+	    <p>Submit your order here</p>
+	  </div>
+    </div>
+	<script src="JS/jquery-3.3.1.min.js"></script>
+    <script src="mutation2.js"></script>
+  </body>
+</html>

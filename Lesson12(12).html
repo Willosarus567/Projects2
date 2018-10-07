@@ -1,0 +1,169 @@
+<html>
+<head>
+    <title>Image Gallery</title>
+    <style>
+        body
+        {
+            background-color: goldenrod;
+        }
+        #gallery
+        {
+            width: 450px;
+            margin: 25px auto; 
+            position: relative;   
+        }
+        #upper
+        {
+            height: 450px;
+            margin-bottom: 10px; 
+        }
+        #upper img 
+        {
+            width: 100%; 
+            position: absolute; 
+        }
+        .thumb img
+        {
+            width: 150px;
+            height: 120px;  
+        }
+        #lower
+        {
+            overflow: hidden; 
+        }
+        .arrow
+        {
+            position: absolute; 
+            bottom: 30px;  
+        }
+        #left
+        {
+            left: -60px;
+            transform: rotate(180deg);
+        }
+        #right
+        {
+            right: -60px;
+        }
+        #thumbs 
+        {
+            white-space: nowrap;
+        }
+        #thumbs img 
+        {
+            opacity: .4;
+        }
+        #thumbs img:hover
+        {
+            opacity: 1.00;
+        }
+        #thumbs a 
+        {
+            display: inline-block;
+        }
+        .arrow.disabled
+        {
+            display: none;
+        }
+    </style>
+      
+    
+    <script src="JS/jquery-3.3.1.min.js"></script>
+    
+    <script>
+        var images, thumbwidth;
+        var count = 0;  
+        var imagesArray = ["sce1.jpeg",
+                           "sce2.jpeg", 
+                           "sce3.jpeg",
+                           "sce5.jpeg",
+                           "sce6.jpeg",
+                           "sce7.jpeg",
+                           "sce8.jpeg"
+                           ];
+        $(document).ready(function(){
+            $.each(imagesArray, function(index, value){
+                $("#upper").append("<img id='img" + index + "' src='" + value + "' />");
+                $("#thumbs").append("<a href ='#' class='thumb' id='img" + index + "'> <img src='" + value + "' /></a>"); 
+            });
+            
+            images = $("#upper").find("img");
+            thumbWidth = $(".thumb").css("width"); 
+            thumbWidth = thumbWidth.slice(0, (thumbWidth.length - 2));
+
+            updateArrows(); 
+
+            $(".thumb").on("click", function(){
+                var thumbId = $(this).attr("id");
+                
+
+                $.each(images, function(index, value){
+                    if (thumbId == $(value).attr("id")) {
+                        $(value).css("z-index", "1")
+                    }
+                    else{
+                        $(value).css("z-index", "-1")
+                    }
+
+                });
+
+            });
+        $(".arrow").on("click", function(){
+            var arrowId = $(this).attr("id");
+            var scrollString;
+
+            if(arrowId == 'left')
+            {
+                scrollString = "+=";
+                count--;
+            } 
+            else
+            {
+                scrollString = "-=";
+                count++;
+            }
+            
+            $("#thumbs").animate({
+                marginLeft: scrollString + thumbWidth + "px"}, "fast", updateArrows);
+        });
+        }); 
+           function updateArrows()
+           {
+               var totalNoImages = images.length;
+               var galleryWidth = $("#gallery").css("width");  
+               galleryWidth = galleryWidth.slice(0, (galleryWidth.length - 2));   
+               noThumbsAtATime = galleryWidth/thumbWidth;
+              var lastCount = totalNoImages - noThumbsAtATime;
+
+              if (count == lastCount)
+              {
+                  $("#right").addClass("disabled")
+              }
+              else
+              {
+                  $("right").removeClass("disabled"); 
+              }
+              if (count == 0)
+              {
+                $("#left").addClass("disabled")
+              }
+              else
+              {
+                $("#left").removeClass("disabled")
+              }
+           }
+    </script>
+
+    
+</head>
+<body>
+     <div id="gallery">
+         <div id="upper"></div>
+         <div id="lower">
+             <a href="#" class="arrow" id="left"><img src="arrow-right.png"></a>
+             <div id="thumbs"></div>
+             <a href="#" class="arrow" id="right"><img src="arrow-right.png"></a>
+         </div>
+     </div>
+</body>
+</html>

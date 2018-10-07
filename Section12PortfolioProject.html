@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Portfolio Project</title>
+    <style>
+        body{ 
+            background-color: hotpink; 
+        }
+        #container{
+            width: 750px;
+            height: 580px;
+            border: 2px solid grey;
+            margin: 0px auto;
+            border-radius: 20px;
+            background-color: azure; 
+        }
+        #filter{
+            list-style-type: none; 
+        }
+        #filter li{
+            float: left;
+            font-size: 25px; 
+            border-right: 2px solid grey; 
+            margin-right: 10px;
+            padding-right: 10px; 
+        }
+        #filter li:last-child{
+            border-right: none; 
+        } 
+        #filter li a:hover{
+            color: lightcoral;
+        }
+        #filter li a{
+            color: silver;
+            text-decoration: none; 
+        }
+        #filter li.current a{
+            color: black;
+            font-weight: bold; 
+            text-decoration: underline; 
+        }
+        #portfolio{
+            list-style-type: none;
+            width: 680px;
+            float: left; 
+        }
+        #portfolio a{
+            color: darkmagenta; 
+        }
+        #portfolio li {
+            float: left; 
+            margin: 5px;
+            padding: 5px; 
+            text-align: center; 
+            width: 200px;
+            border: 1px solid grey;  
+            border-radius: 2px;
+            font-size: 20px; 
+        }
+        #portfolio img{
+            width: 200px;
+            height: 120px; 
+        }
+
+    </style>  
+    <script src="JS/jquery-3.3.1.min.js"></script>
+   
+    <script>
+    $(document).ready(function(){
+        $("#filter a").click(function(){
+            $("#filter .current").removeClass("current");
+            $(this).parent().addClass("current"); 
+            var filterValue = $(this).text().toLowerCase().replace(" ", "_");
+            $("#portfolio li").fadeIn(10); 
+            if (filterValue != "all")
+            {
+                $("#portfolio li").not("." + filterValue).fadeOut(10);
+            }
+        });
+    });
+    </script>
+
+    
+</head>
+<body>
+   <div id="container">
+   <ul id="filter">
+       <li class="current"><a href="#">All</a></li>
+       <li><a href="#">Design</a></li>
+       <li><a href="#">Product</a></li>
+       <li><a href="#">Coming Soon</a></li>
+   </ul>
+   <ul id="portfolio">
+       <li class="product"><a href="#"><img src="Accounting.jpg" />Accounting</a></li>
+       <li class="design"><a href="#"><img src="college.jpg" />College</a></li>
+       <li class="product"><a href="#"><img src="builderslogo.jpg" />Builders</a></li>
+       <li class="design coming_soon"><a href="#"><img src="ComingSoonlogo.jpg" />Coming Soon</a></li>
+       <li class="product"><a href="#"><img src="campuslogo.jpg" />Campus</a></li>
+       <li class="design"><a href="#"><img src="crypterslogo.jpg" />Crypters</a></li>
+       <li class="product"><a href="#"><img src="HRlogo.jpg" />HR</a></li>
+       <li class="design coming_soon"><a href="#"><img src="ComingSoonlogo.jpg" />Coming Soon</a></li>
+       <li class="product"><a href="#"><img src="Inventorylogo.jpg" />Inventory</a></li>
+   </ul>
+</div>
+</body>
+</html>

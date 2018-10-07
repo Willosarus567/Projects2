@@ -1,0 +1,186 @@
+
+body { background-image: url(MaerskSeletar.jpg);
+       background-size: cover;
+       background-repeat: no-repeat;  	   
+}
+
+ h3 { text-align: center;
+      margin-bottom: 5px;
+}
+ li { list-style-type: none; 
+      display: inline-block;
+} 
+
+ h2 { padding-left: 178px;
+      padding-bottom: 8px;  
+	  padding-top: 1.2px;
+       	  
+}
+
+.containerN { margin-left: 60px;
+              padding-top: 0px;
+			  padding-left: 387px; 
+              width: 1373.7px;
+              height: 60px;
+              margin-top: -7px;			  
+              margin-bottom: 0px; 
+			  background-color: white;
+	          background-image: url(.jpg);
+	          background-repeat: no-repeat;
+	          background-position: right; 
+			  border: 1px solid #6495ED;
+			  color: #B87333;
+			  font-size: 28px;
+}
+
+.container0 { margin-top: 2px;
+              margin-left: 60px;
+              padding-top: 0px;
+              padding-bottom: 0px;
+              width: 1760.7px;
+              height: 60px;	   
+              margin-bottom: 0px; 
+			  background-color: #AFEEEE;
+	          background-image: url(.jpg);
+	          background-repeat: no-repeat;
+	          background-position: right; 
+			  border: 1px solid #6495ED;
+}
+
+.container1 { background-color: #FFD700;
+              opacity: 0.49;
+			  position: absolute; 
+			  margin-left: 60px;
+			  margin-top: 9px; 
+			  width:1760.7px; 
+			  height:200px;
+              align-items: center;			  
+}
+
+.container2 { background-color: #36454F;
+              width:1760.7px;
+              margin-left: 60px;
+			  margin-top: 620px; 
+              padding-bottom: 14px;
+              padding-left: 50px;			  
+              padding-top: -5px;			  
+}
+
+.container2 a { color: white; 
+}
+
+.container2 a:hover { background-color: #008080; 
+}
+
+td, th, tr { padding-top: 5px;
+	         border: 1px solid #36454F;
+		     color: #DFDCCD; 
+		     background-color: #36454F;
+}
+
+table { border: 1px solid #36454F; }
+
+		 
+.TimeZones {           
+             margin-left: 178.5px;
+			 margin-right: 38px;
+             position: relative;
+             margin-top: -12px; 			 
+}
+
+.main {
+    display: flex;
+    padding: 2em;
+    height: 90vh;
+    justify-content: center;
+    align-items: middle;
+}
+
+.clockbox,
+#clock {
+    width: 100px;
+	height: 100px; 
+	background-color: #FFE4E1;
+}
+
+/* Clock styles */
+.circle {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+
+.mid-circle {
+    fill: #000;
+}
+.hour-marks {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+
+.hour-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 17;
+    stroke-miterlimit: 10;
+}
+
+.minute-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 11;
+    stroke-miterlimit: 10;
+}
+
+.second-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 4;
+    stroke-miterlimit: 10;
+}
+
+/* Transparent box ensuring arms center properly. */
+.sizing-box {
+    fill: none;
+}
+
+/* Make all arms rotate around the same center point. */
+/* Optional: Use transition for animation. */
+#hour,
+#minute,
+
+#minute1,
+
+#minute2,
+
+#minute3,
+
+#minute4,
+
+#minute5,
+
+#minute6,
+
+#minute7,
+
+#minute8,
+
+#minute9,
+
+#minute10,
+
+#minute11,
+
+#minute12,
+
+#minute13,
+
+#minute14,
+
+#second {
+    transform-origin: 300px 300px;
+    /* transition: transform .5s ease-in-out; This is what originally gives it its animation feature. */ 
+}
