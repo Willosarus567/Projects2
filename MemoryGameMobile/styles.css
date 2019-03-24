@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+}
+
+@media (min-width: 900px) {
+          
+        .container4 {
+            display: block;
+            float: left;
+            height: 40%;
+        }
+        .container1{
+            float: left;
+            
+        }
+        .container2{
+            float: left;
+            
+        }
+        .container3{
+            float: left;
+        }
+        
+   }
+
+   @media(max-width: 48em){
+     
+      
+    
+  }
+
+.memorycard-board {
+    border: 3px solid blue;
+    padding-left: 5px; 
+    padding-right: 5px;
+    height: 15px;
+    position: absolute;
+    background-color: blue; 
+}
+
+.btnClick {
+    height: 70px;
+    width: 70px;
+    margin-left: 5px; 
+    background-color: salmon;
+    color: black;   
+}
+
+.btnClick2 {
+    height: 70px;
+    width: 70px; 
+    margin-right: 5px;
+    background-color: salmon;
+    color: black;
+}
+
+.container1 {
+    height: 88px;
+    width: 220px; 
+    border: 3px dotted darkred;
+    padding: 5px;
+    padding-top: 10px;  
+    margin-top: 0px;
+    margin-left: 1px;
+    background: gold; 
+}
+
+.container2 {
+    height: 88px;
+    width: 120px; 
+    border: 3px dotted darkred;
+    text-align: center;
+    position: relative;
+    padding-top: 25px;
+    font-size: 30px; 
+    margin-top: 0px;
+    margin-left: 1px;
+    background: gold; 
+}
+
+.container3 {
+    height: 88px;
+    width: 300px; 
+    position: static;
+    border: 3px dotted darkred;
+    text-align: center;
+    padding: 2px; 
+    margin-top: 0px;
+    margin-left: 1px;
+    background: gold; 
+}
+
+.container4 {
+    height: auto;
+    width: auto;  
+    border: 3px solid red;
+    text-align: center;
+    margin-top:5px;
+    padding: 4px; 
+    background: white; 
+}
+
+body {
+    height: 100vh;
+    display: flex; 
+    background: rgb(0, 0, 255); 
+}
+
+.memory-game {
+    width: 640px;
+    height: 640px;
+    display: flex; 
+    flex-wrap: wrap; 
+    perspective: 1000px;
+    margin-top: 180px;
+    
+}
+
+.memory-card {
+    width: calc(25% - 10px); 
+    height: calc(33.333% - 10px); 
+    margin: 5px;  
+    transform: scale(1); 
+    border: 2px dotted aqua;
+    transform-style: preserve-3d;
+    transition: transform .5s; 
+}
+
+.memory-card:active {    /*This is a pseudo class of memory card, basically once an event happens to it, such as
+                           an onclick event, it gains these attributes set forth. */
+    transform: scale(.97);
+    transition: transform .2s; 
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg); 
+}
+
+
+.front-face, /*Remember to concatenate classes in CSS, you must use a comma.*/
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px; 
+    position: absolute;
+    border-radius: 5px;
+    background: #1c7ccc; 
+    border: 2px solid deeppink;  
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg); 
+}
